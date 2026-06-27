@@ -25,4 +25,11 @@ add_executable(fake_database
   ${SOURCE_FILES}
 )
 
+add_executable(tesT
+  tests/ParserTest.cpp
+  src/Kits/CommandParser.cpp
+  src/DataModels/OperationArray.cpp
+)
+
 target_include_directories(fake_database PRIVATE include)
+target_include_directories(tesT PRIVATE include)

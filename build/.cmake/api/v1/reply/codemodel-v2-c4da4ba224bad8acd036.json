@@ -16,7 +16,8 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -31,7 +32,8 @@
 					"name" : "FakeDatabase",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -40,8 +42,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "fake_database::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-fake_database-Debug-136d057d763240b03f43.json",
+					"jsonFile" : "target-fake_database-Debug-04ff54375424b83d1998.json",
 					"name" : "fake_database",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "tesT::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tesT-Debug-d2cf3450fb8dcdb305ee.json",
+					"name" : "tesT",
 					"projectIndex" : 0
 				}
 			]

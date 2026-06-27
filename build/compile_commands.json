@@ -46,5 +46,23 @@
   "command": "/opt/homebrew/bin/aarch64-apple-darwin25-g++-15 -I\"/Users/david_an/Documents/Coding/coding projects active/FakeDatabase/include\" -g -std=c++20 -arch arm64 -o CMakeFiles/fake_database.dir/src/DataModels/DatabaseRelated/DBOperations.cpp.o -c \"/Users/david_an/Documents/Coding/coding projects active/FakeDatabase/src/DataModels/DatabaseRelated/DBOperations.cpp\"",
   "file": "/Users/david_an/Documents/Coding/coding projects active/FakeDatabase/src/DataModels/DatabaseRelated/DBOperations.cpp",
   "output": "/Users/david_an/Documents/Coding/coding projects active/FakeDatabase/build/CMakeFiles/fake_database.dir/src/DataModels/DatabaseRelated/DBOperations.cpp.o"
+},
+{
+  "directory": "/Users/david_an/Documents/Coding/coding projects active/FakeDatabase/build",
+  "command": "/opt/homebrew/bin/aarch64-apple-darwin25-g++-15 -I\"/Users/david_an/Documents/Coding/coding projects active/FakeDatabase/include\" -g -std=c++20 -arch arm64 -o CMakeFiles/tesT.dir/tests/ParserTest.cpp.o -c \"/Users/david_an/Documents/Coding/coding projects active/FakeDatabase/tests/ParserTest.cpp\"",
+  "file": "/Users/david_an/Documents/Coding/coding projects active/FakeDatabase/tests/ParserTest.cpp",
+  "output": "/Users/david_an/Documents/Coding/coding projects active/FakeDatabase/build/CMakeFiles/tesT.dir/tests/ParserTest.cpp.o"
+},
+{
+  "directory": "/Users/david_an/Documents/Coding/coding projects active/FakeDatabase/build",
+  "command": "/opt/homebrew/bin/aarch64-apple-darwin25-g++-15 -I\"/Users/david_an/Documents/Coding/coding projects active/FakeDatabase/include\" -g -std=c++20 -arch arm64 -o CMakeFiles/tesT.dir/src/Kits/CommandParser.cpp.o -c \"/Users/david_an/Documents/Coding/coding projects active/FakeDatabase/src/Kits/CommandParser.cpp\"",
+  "file": "/Users/david_an/Documents/Coding/coding projects active/FakeDatabase/src/Kits/CommandParser.cpp",
+  "output": "/Users/david_an/Documents/Coding/coding projects active/FakeDatabase/build/CMakeFiles/tesT.dir/src/Kits/CommandParser.cpp.o"
+},
+{
+  "directory": "/Users/david_an/Documents/Coding/coding projects active/FakeDatabase/build",
+  "command": "/opt/homebrew/bin/aarch64-apple-darwin25-g++-15 -I\"/Users/david_an/Documents/Coding/coding projects active/FakeDatabase/include\" -g -std=c++20 -arch arm64 -o CMakeFiles/tesT.dir/src/DataModels/OperationArray.cpp.o -c \"/Users/david_an/Documents/Coding/coding projects active/FakeDatabase/src/DataModels/OperationArray.cpp\"",
+  "file": "/Users/david_an/Documents/Coding/coding projects active/FakeDatabase/src/DataModels/OperationArray.cpp",
+  "output": "/Users/david_an/Documents/Coding/coding projects active/FakeDatabase/build/CMakeFiles/tesT.dir/src/DataModels/OperationArray.cpp.o"
 }
 ]

@@ -1,30 +1,31 @@
 #include <string>
+#include <sstream>
 #include <iostream>
+#include <any>
 #include "Kits/CommandParser.h"
 
 
-std::array<std::string, 4> CommandParser::parseToArgs(const std::string& command) {
-  if (command.at(0) != 'k' && command.at(1) != ' ') {
+std::array<std::string, 4> CommandParser::parseToArgs(const std::string& cmd) {
+  if (cmd.at(0) != 'k' && cmd.at(1) != ' ') {
     return {};
   }
+
+  const std::string& command {cmd.substr(2)};
+
   std::array<std::string, 4> commandParts {};
-  int iS = 0;
-  int lastIndex = 0;
-  for (size_t i = 1; i < command.size(); ++i) {
-    if (command.at(i) != ' ' && command.at(i - 1) == ' ') {
-      lastIndex = i;
-    }
-    if (i == command.size()-1) {
-      commandParts.at(iS) = command.substr(lastIndex, i-lastIndex+1);
-      ++iS;
+  std::stringstream ss(command);
+  std::string token;
+  std::array<std::string, 4> result;
+  
+  int i = 0;
+  while (std::getline(ss, token, ' ')) {
+    result[i] = token;
+    ++i;
+    if (i >= result.size()) {
       break;
-    } else if (command.at(i) == ' ' && i != 1) {
-      commandParts.at(iS) = command.substr(lastIndex, i-lastIndex);
-      ++iS;
-      continue;
     }
   }
-  return commandParts;
+  return result;
 }
 
 void CommandParser::setCommands(const std::array<OperationArray, 8>& commands) {
