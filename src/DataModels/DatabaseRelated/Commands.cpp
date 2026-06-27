@@ -7,6 +7,8 @@
 
 Query Commands::query {};
 
+int countDigits(int number);
+
 std::string Commands::displayTable(const long& tableId) {
   if (query.getTableById(tableId) == nullptr) {
     return "table with ID " + std::to_string(tableId) + " not found";
@@ -14,7 +16,23 @@ std::string Commands::displayTable(const long& tableId) {
   const Table& table = *query.getTableById(tableId);
   auto columns = table.getColumns();
   std::array<int, 5> columnWidths {};
-  for (size_t i = 0; i < sizeof(columns) / sizeof(columns[0]); ++i) {
+  int idColumnWidth {};
+  for (int i = -1; i < static_cast<int>(sizeof(columns) / sizeof(columns[0])); ++i) {
+
+    if (i == -1) {
+      int biggestIdLength {2}; // two is the length of 'id'
+      for (const auto& row : table.getRows()) {
+        if (row.getId() == -1) {
+          continue;
+        }
+        std::cout << "comparing: " << row.getId() << " and " << biggestIdLength << std::endl;
+        biggestIdLength = std::max(biggestIdLength, countDigits(row.getId()));
+        std::cout << biggestIdLength << " is the winner" << std::endl;
+      }
+      idColumnWidth = biggestIdLength;
+      continue;
+    }
+
     int biggestColumnLength = 0;
     std::string columnNameValue = columns.at(i);
     int maxColumnLength {};
@@ -29,8 +47,16 @@ std::string Commands::displayTable(const long& tableId) {
     biggestColumnLength = std::max(maxColumnLength, static_cast<int>(columnNameValue.length()));
     columnWidths.at(i) = biggestColumnLength;
   }
+  std::cout << idColumnWidth << std::endl;
 
   std::string result = "Table: " + table.getName() + "\n";
+  // printing the id
+  result += ("\033[1m" + std::string("id") + "\033[0m");
+  for (int j = 0; j < idColumnWidth-2; ++j) { // not 2 because ...
+    result += " ";
+  }
+  result += " | ";
+  // printing the actual column info
   for (size_t i = 0; i < sizeof(columns) / sizeof(columns[0]); ++i) {
     std::string column = columns.at(i);
     if (!column.empty()) {
@@ -42,22 +68,35 @@ std::string Commands::displayTable(const long& tableId) {
     }
   }
   result += "\n";
+
+  // printing the rows
   for (const auto& row : table.getRows()) {
     if (row.getId() == -1) {
       continue;
     }
 
+    result += std::to_string(row.getId());
+    for (int i = 0; i < idColumnWidth - countDigits(row.getId()); ++i) {
+      result += " ";
+    }
+    result += " | ";
+
     for (int j = 0; j < row.getData().size(); ++j) {
       const auto& data = row.getData().at(j);
       if (!data.has_value()) {
-        result += "NULL | ";
-      } else {
-        table.convertToStr(data).has_value() ? result += table.convertToStr(data).value() : result += "NULL";
-        for (int i = 0; i < columnWidths.at(j) - table.convertToStr(data).value().length(); ++i) {
+        for (int i = 0; i < columnWidths.at(j); ++i) {
           result += " ";
         }
         result += " | ";
+        continue;
       }
+
+      table.convertToStr(data).has_value() ? result += table.convertToStr(data).value() : result += "NULL";
+      for (int i = 0; i < columnWidths.at(j) - table.convertToStr(data).value().length(); ++i) {
+        result += " ";
+      }
+      result += " | ";
+
     }
     result += "\n";
   }
@@ -224,4 +263,15 @@ int Commands::stringToInt(const std::string& str) {
     }
     
     return -999999; 
+}
+
+int countDigits(int number) {
+    int count = 0;
+    // Handled using a do-while loop to ensure 0 counts as 1 digit
+    do {
+        count++;
+        number /= 10;
+    } while (number != 0);
+    
+    return count;
 }

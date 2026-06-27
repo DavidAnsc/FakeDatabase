@@ -114,27 +114,27 @@ void DBOperations::deleteRow(const std::array<std::string, 4>& args) {
 
 
 int getTableIdByName(std::string tableName) {
-  int tableId = Commands::query.getTableByName(tableName).has_value() ? Commands::query.getTableByName(tableName).value().getId() : -1;
-  if (tableId == -1) {
+  const Table* tablePtr {Commands::query.getTableByName(tableName)};
+  if (tablePtr == nullptr) {
     std::cout << "table with name '" << tableName << "' not found" << std::endl;
     return -1;
   }
-  return tableId;
+  return tablePtr->getId();
 }
 int getColumnIdByName(int tableId, std::string columnName) {
-  auto table = Commands::query.getTableById(tableId);
-  if (!table.has_value()) {
-    std::cout << "table with ID " << tableId << " not found" << std::endl;
+  const Table* tablePtr {Commands::query.getTableById(tableId)};
+  if (tablePtr == nullptr) {
+    std::cout << "table with id '" << tableId << "' not found" << std::endl;
     return -1;
   }
 
-  auto columns = table.value().getColumns();
+  auto& columns = tablePtr->getColumns();
   for (size_t i = 0; i < columns.size(); ++i) {
     if (columns.at(i) == columnName) {
       return static_cast<int>(i);
     }
   }
 
-  std::cout << "column with name '" << columnName << "' not found in table named: '" << table.value().getName() << "'" << std::endl;
+  std::cout << "column with name '" << columnName << "' not found in table named: '" << tablePtr->getName() << "'" << std::endl;
   return -1;
 }
