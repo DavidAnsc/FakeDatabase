@@ -197,7 +197,7 @@ std::string Commands::deleteRow(const long& tableId, const long& rowId) {
   }
   Table table = *tablePtr;
 
-  auto rows = table.getRows();
+  std::array<Row, 10> rows = table.getRows();
   if (rowId < 0 || rowId >= rows.size() || rows.at(rowId).getId() == -1) {
     return "row with ID " + std::to_string(rowId) + " not found in table named: '" + table.getName() + "'";
   }
