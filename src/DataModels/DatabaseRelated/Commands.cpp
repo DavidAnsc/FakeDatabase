@@ -112,8 +112,6 @@ std::string Commands::createTable(const std::string& tableName) {
     {{}}
   };
   
-  std::cout << newTable.getName() << std::endl;
-  
   query.addTable(newTable);
   return "created table named: '" + tableName + "'";
   
