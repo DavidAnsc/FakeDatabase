@@ -1,0 +1,3 @@
+/Users/david_an/Documents/Coding/coding projects active/FakeDatabase/build/CMakeFiles/fake_database.dir
+/Users/david_an/Documents/Coding/coding projects active/FakeDatabase/build/CMakeFiles/edit_cache.dir
+/Users/david_an/Documents/Coding/coding projects active/FakeDatabase/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,23 @@
+# ninja log v7
+2	539	1782329600919794844	CMakeFiles/fake_database.dir/src/DataModels/DatabaseRelated/Row.cpp.o	a642b1dbcb1a42a6
+5	468	1782516042240368063	CMakeFiles/fake_database.dir/src/DataModels/DatabaseRelated/Table.cpp.o	cefc82b66af3b9b6
+1	540	1782327073281407956	CMakeFiles/fake_database.dir/src/DataModels/OperationArray.cpp.o	b70c69beb68b13c
+6	550	1782515873052316903	CMakeFiles/fake_database.dir/src/DataModels/DatabaseRelated/Query.cpp.o	3d160f8380b045cf
+6	633	1782512146534539075	CMakeFiles/fake_database.dir/src/main.cpp.o	5c0cc97a9378804f
+2	600	1782327073282156754	CMakeFiles/fake_database.dir/src/Kits/CommandParser.cpp.o	92ff4731b263c956
+625	684	1782516556311665853	fake_database	429da453e9d67b81
+6	625	1782516555692195965	CMakeFiles/fake_database.dir/src/DataModels/DatabaseRelated/Commands.cpp.o	f642a71985baddb1
+6	926	1782519131307202808	CMakeFiles/fake_database.dir/src/DataModels/DatabaseRelated/Query.cpp.o	3d160f8380b045cf
+6	926	1782519131306469226	CMakeFiles/fake_database.dir/src/main.cpp.o	5c0cc97a9378804f
+7	926	1782519131307614848	CMakeFiles/fake_database.dir/src/DataModels/DatabaseRelated/DBOperations.cpp.o	1426fcc4f7f1ff6b
+7	942	1782519131307434224	CMakeFiles/fake_database.dir/src/DataModels/DatabaseRelated/Commands.cpp.o	f642a71985baddb1
+942	1104	1782519132242876382	fake_database	2611ae8608f8f3e2
+5	682	1782519474621742217	CMakeFiles/fake_database.dir/src/main.cpp.o	5c0cc97a9378804f
+6	682	1782519474622240800	CMakeFiles/fake_database.dir/src/Kits/CommandParser.cpp.o	92ff4731b263c956
+682	830	1782519475298172532	fake_database	2611ae8608f8f3e2
+5	636	1782519549218530088	CMakeFiles/fake_database.dir/src/DataModels/DatabaseRelated/DBOperations.cpp.o	1426fcc4f7f1ff6b
+637	781	1782519549849679029	fake_database	2611ae8608f8f3e2
+6	675	1782519639712936883	CMakeFiles/fake_database.dir/src/main.cpp.o	5c0cc97a9378804f
+675	807	1782519640381740461	fake_database	2611ae8608f8f3e2
+10	1074	1782566930361230767	CMakeFiles/fake_database.dir/src/Kits/CommandParser.cpp.o	92ff4731b263c956
+1074	1252	1782566931425237520	fake_database	2611ae8608f8f3e2
